@@ -1,10 +1,9 @@
-import { 
-  GraphQLID, 
+import {
+  GraphQLID,
   GraphQLNonNull,
 } from 'graphql'
 
 // importing module from mongodb
-import Event from '../../db/event'
 import EventType from '../types/event'
 
 module.exports = {
@@ -16,7 +15,7 @@ module.exports = {
     }
   },
   // {id} destructed from args
-  resolve: (root, {id}) => new Promise((res, rej)=>{
+  resolve: (root, {id}, { db: { Event } }) => new Promise((res, rej)=>{
     Event.findById(id)
       .then(data=> res(data))
       .catch(err=> reject(err))

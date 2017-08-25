@@ -1,6 +1,7 @@
 import express from 'express'
 import graphqlHTTP from 'express-graphql'
 import schema from './graphql/schema'
+import db from './db'
 
 const app = express()
 
@@ -10,11 +11,13 @@ app.use((req, res, next) => {
 })
 
 app.use('/graphql',graphqlHTTP({
-    schema: schema,
-    graphiql: true
-  })
+  context: {
+    db
+  },
+  schema: schema,
+  graphiql: true
+})
 )
-
 
 
 app.use('/', (req, res)=> {

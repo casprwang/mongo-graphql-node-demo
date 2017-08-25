@@ -1,7 +1,6 @@
 import { GraphQLNonNull } from 'graphql'
 import EventType from '../types/event.js'
 import EventInputType from '../types/input/event.js'
-import Event from '../../db/event.js'
 
 module.exports  = {
   type: EventType,
@@ -12,7 +11,7 @@ module.exports  = {
     }
   },
 
-  resolve: (root, { data }) => new Promise((res, rej)=> {
+  resolve: (root, { data }, { db: {Event} }) => new Promise((res, rej)=> {
     const newEvent = new Event(data)
 
     newEvent.save()

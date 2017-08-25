@@ -1,15 +1,5 @@
-import mongoose from 'mongoose'
-import config from '../config'
+import Event from './event'
 
-// use Node global promise
-mongoose.Promise = global.Promise
-mongoose.connect(config.db.url)
-
-const { connection } = mongoose
-
-connection.on('close', ()=> {
-  console.log('MongoDB connection closed')
-  process.exit(0)
-})
-
-module.exports = mongoose
+module.exports = {
+  Event
+}
