@@ -3,6 +3,8 @@ import {
   GraphQLNonNull,
 } from 'graphql'
 
+// importing module from mongodb
+import Event from '../../db/event'
 import EventType from '../types/event'
 
 module.exports = {
@@ -13,11 +15,10 @@ module.exports = {
       type: new GraphQLNonNull(GraphQLID)
     }
   },
-  resolve: (root, args) => new Promise((res, rej)=>{
-    res({
-      id: 'sdklfjlsdjfsdlfjkds',
-      name: 'Launch Party',
-      date: 'Today'
-    })
+  // {id} destructed from args
+  resolve: (root, {id}) => new Promise((res, rej)=>{
+    Event.findById(id)
+      .then(data=> res(data))
+      .catch(err=> reject(err))
   })
 }
