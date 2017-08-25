@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import config from '../config'
+const mongoose = require('mongoose')
+const config = require('../config')
 
 // use Node global promise
 mongoose.Promise = global.Promise

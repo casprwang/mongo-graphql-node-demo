@@ -1,4 +1,4 @@
-import mongoose from './connection'
+const mongoose = require('./connection')
 
 const { Schema } = mongoose
 

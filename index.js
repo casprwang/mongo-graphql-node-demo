@@ -1,5 +1,5 @@
-import app from './server'
-import config from './server/config'
+const app = require('./server')
+const config = require('./server/config')
 
 
 app.listen(config.port, err=>{
