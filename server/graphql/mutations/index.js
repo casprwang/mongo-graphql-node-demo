@@ -1,4 +1,4 @@
-const createEvent = require('./createEvent')
+import createEvent from './createEvent'
 
 module.exports = {
   createEvent

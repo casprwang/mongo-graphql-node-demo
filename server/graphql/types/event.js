@@ -1,9 +1,9 @@
-const {
+import {
   GraphQLObjectType,
   GraphQLNonNull,
   GraphQLID,
   GraphQLString
-} = require('graphql')
+} from 'graphql'
 
 module.exports = new GraphQLObjectType ({
   name: 'Event',

@@ -1,6 +1,6 @@
-const { GraphQLNonNull } = require('graphql')
-const EventType = require('../types/event.js')
-const EventInputType = require('../types/input/event.js')
+import { GraphQLNonNull } from 'graphql'
+import EventType from '../types/event.js'
+import EventInputType from '../types/input/event.js'
 
 module.exports  = {
   type: EventType,

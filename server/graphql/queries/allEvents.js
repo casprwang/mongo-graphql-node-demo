@@ -1,9 +1,9 @@
-const {
+import {
   GraphQLList
-} = require('graphql')
+} from 'graphql'
 
 // importing module from mongodb
-const EventType = require('../types/event')
+import EventType from '../types/event'
 
 module.exports = {
   type: new GraphQLList(EventType),

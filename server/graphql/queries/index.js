@@ -1,5 +1,5 @@
-const Event = require('./event')
-const allEvents = require('./allEvents')
+import Event from './event'
+import allEvents from './allEvents'
 
 module.exports = {
   Event,

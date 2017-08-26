@@ -1,7 +1,7 @@
-const {
+import {
   GraphQLInputObjectType,
   GraphQLString
-} = require('graphql')
+} from 'graphql'
 
 module.exports = new GraphQLInputObjectType({
   name: 'EventInput',
